@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="animate.min.css">
+ 
+    <title>FlightsApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <h1 style="color:red", style= "text-align:center">BP Airlines</h1>
+
+ <% if signed_in? %>
+      Signed in as: <%= current_user.email %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete %>
+
+    <% end %>
+  <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+  <body>
+    <%= yield %>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.6.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.6.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+  </body>
+  <br>
+ 
+  <%=link_to 'Main Menu', tickets_path%>
+  <br>
+<br>
+<%= link_to 'Admin', flights_path %>
+</html>

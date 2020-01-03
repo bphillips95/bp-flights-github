@@ -1,0 +1,10 @@
+<h2><%=link_to 'Book A Flight',tickets_passengers_path%></h1>
+
+
+<iframe src="https://giphy.com/embed/Btn42lfKKrOzS" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/plane-airplane-Btn42lfKKrOzS">via GIPHY</a></p>
+
+<%= form_tag('/tickets/your_ticket', :method => :get) do %>
+<%=label_tag("Look up flight by confirmation")%>
+ <%=number_field_tag(:confirmation)%>
+  <div><%= submit_tag 'Find Flight' %></div>
+<% end -%>

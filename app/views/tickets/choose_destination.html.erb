@@ -1,0 +1,5 @@
+<h1>Select a Destination</h1>
+
+    <% @destinations.each do |destination| %>
+    <%= button_to destination.location, tickets_flights_path, method: :get, params: {destination_id: destination.id } %><br>
+<%end %>

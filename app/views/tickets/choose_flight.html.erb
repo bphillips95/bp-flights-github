@@ -1,0 +1,10 @@
+<h1>Select a Flight</h1>
+
+<%@flights.each do |flight|%>
+
+  <%if flight.destination == @destination%>
+    <%=button_to flight.flight_number, tickets_checkout_path, method: :get, params: {flight_id: flight.id }%>
+<%end%>
+<%end%>
+
+<iframe src="https://giphy.com/embed/eajLwx3Z8juoM" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/planes-eajLwx3Z8juoM">via GIPHY</a></p>

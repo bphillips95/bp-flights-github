@@ -1,0 +1,8 @@
+
+<h1>Choose a flight</h1>
+
+<%=form_for @ticket do |f|%>
+<%=f.label 'Flight'%><br>
+<%=collection_select(:ticket,:flight_id,Flight.all,:id,:plane,:prompt => true) %><br>
+<%=f.submit%>
+<%end %>

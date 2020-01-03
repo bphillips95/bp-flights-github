@@ -1,0 +1,8 @@
+<h3>Admin Only</h3><br>
+
+<h1>List of Destinations</h1>
+<%@destinations.each do |d|%>
+<div><%=d.location%></div>
+<%end%>
+
+<%= link_to 'Add Destination', new_destination_path %>

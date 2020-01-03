@@ -1,0 +1,16 @@
+<h1>Congrats, Your Ticket is Booked!!!</h2>
+<br>
+<br>
+<h3><%=@ticket.passenger.full_name%>,
+you are going to
+<%=@ticket.flight.destination.location%>
+on a 
+<%=@ticket.flight.plane%>.</h3>
+<br>
+Your Confirmation Number is
+<%=@ticket.confirmation %>
+<br>
+<%= button_to "Cancel Ticket", {:controller => :tickets,
+    :action => 'destroy', :id => @ticket.id }, :method => :delete %>
+
+<iframe width="660" height="450" src="https://www.youtube.com/embed/9XURanRqM9M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

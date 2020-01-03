@@ -1,0 +1,10 @@
+<h3>This page is for admin only</h3>
+
+<h1>List of Scheduled Flights</h1>
+
+<%@flights.each do |f|%>
+<%=link_to f.flight_number, flight_path(f)%>
+<%=f.plane%>
+<%=f.destination.city%><div><br>
+<%end%>
+<%= link_to 'Add New Flight', new_flight_path %>

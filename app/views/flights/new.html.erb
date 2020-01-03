@@ -1,0 +1,15 @@
+<h3>This Page is For Admins Only</h3>
+
+<h1>Add A Flight</h1>
+
+<%= form_for @flight do |f|%>
+<%=f.label 'Flight Number'%>
+<%=f.number_field :flight_number%><br>
+<%=f.label 'Plane Type'%>
+<%=f.text_field :plane%><br>
+<%=f.label 'Destination'%>
+<%=collection_select(:flight,:destination_id,Destination.all,:id,:location,:prompt => true)%><br>
+<%=f.submit%>
+<%end%>
+
+<%= link_to 'Add Destinations', new_destination_path %>

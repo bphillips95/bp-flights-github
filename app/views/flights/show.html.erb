@@ -1,0 +1,14 @@
+<h2>Flight Info</h2>
+<%=@flight.flight_number%>
+<%=@flight.plane%>
+<%=@flight.destination.location%>
+<br>
+<br>
+<h3>List Of Passengers</h3>
+<%@flight.passengers.each do |passenger| %><br>
+<%= link_to passenger.full_name, passenger_path(passenger)%>
+<%end%>
+<br>
+<br>
+<br>
+<%=link_to 'Back', flights_path %>

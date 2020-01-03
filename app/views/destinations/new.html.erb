@@ -1,0 +1,12 @@
+<h3>This page is for Admin Only</h3>
+
+<h1>Add a Destination</h1>
+<%= form_for @destination do |f| %>
+<%=f.label 'City'%>
+<%=f.text_field :city%>
+<%=f.label 'Country'%>
+<%=f.text_field :country%>
+<%=f.submit%>
+<% end %>
+
+<%= link_to 'Add Flights', new_flight_path %>
